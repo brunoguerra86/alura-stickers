@@ -7,10 +7,11 @@ import java.util.Map;
 
 public class App {
     public static void main(String[] args) throws Exception {
+        String imdbKey = System.getenv("IMDB_API_KEY");
 
         // fazer uma conexão HTTP e buscar os top 250 filmes
         String url = "https://raw.githubusercontent.com/alura-cursos/imersao-java-2-api/main/TopMovies.json";
-        //String url = "https://imdb.api.com/en/API/Top250Movies/api-key";
+        //String url = "https://imdb.api.com/en/API/Top250Movies/" + imdbKey;
         URI endereco = URI.create(url);
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder(endereco).GET().build();
