@@ -8,13 +8,13 @@ public class App {
 
         // Buscar os top 250 filmes
         //String url = "https://imdb.api.com/en/API/Top250Movies/" + imdbKey;
-        String url = "https://raw.githubusercontent.com/alura-cursos/imersao-java-2-api/main/TopMovies.json";
-        ExtratorDeConteudo extrator = new ExtratorDeConteudoDoIMDB();
+        //String url = "https://raw.githubusercontent.com/alura-cursos/imersao-java-2-api/main/TopMovies.json";
+        //ExtratorDeConteudo extrator = new ExtratorDeConteudoDoIMDB();
 
         // Buscar imagens da Nasa
         //String url = "http://api.nasa.gov/planetary/apod?api_key=DEMO_KEY?start_date=2023-04-01&end_date=2023-04-03";
-        //String url = "https://raw.githubusercontent.com/alura-cursos/imersao-java-2-api/main/NASA-APOD.json";
-        //ExtratorDeConteudo extrator = new ExtratorDeConteudoDaNasa();
+        String url = "https://raw.githubusercontent.com/alura-cursos/imersao-java-2-api/main/NASA-APOD.json";
+        ExtratorDeConteudo extrator = new ExtratorDeConteudoDaNasa();
 
         // fazer uma conexão HTTP
         ClienteHttp http = new ClienteHttp();
