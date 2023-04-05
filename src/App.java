@@ -1,7 +1,6 @@
 import java.io.InputStream;
 import java.net.URL;
 import java.util.List;
-import java.util.Map;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -29,13 +28,13 @@ public class App {
         for (int i = 0; i < 3; i++) {
             Conteudo conteudo = conteudos.get(i);
 
-            InputStream inputStream = new URL(conteudo.getUrlImagem()).openStream();
-            String nomeArquivo = conteudo.getTitulo().replaceAll(":","") + ".png";
+            InputStream inputStream = new URL(conteudo.urlImagem()).openStream();
+            String nomeArquivo = conteudo.titulo().replaceAll(":","") + ".png";
 
             geradoraDeFigurinhas.cria(inputStream, nomeArquivo);
 
-            System.out.println("\u001b[1mTítulo : \u001b[m" + conteudo.getTitulo());
-            System.out.println("\u001b[1mImagem : \u001b[m" + conteudo.getUrlImagem());
+            System.out.println("\u001b[1mTítulo : \u001b[m" + conteudo.titulo());
+            System.out.println("\u001b[1mImagem : \u001b[m" + conteudo.urlImagem());
             System.out.println();
 
         }
