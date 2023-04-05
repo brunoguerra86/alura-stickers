@@ -8,25 +8,24 @@ public class App {
         String imdbKey = System.getenv("IMDB_API_KEY");
 
         // Buscar os top 250 filmes
-        String url = "https://raw.githubusercontent.com/alura-cursos/imersao-java-2-api/main/TopMovies.json";
         //String url = "https://imdb.api.com/en/API/Top250Movies/" + imdbKey;
+        String url = "https://raw.githubusercontent.com/alura-cursos/imersao-java-2-api/main/TopMovies.json";
+        ExtratorDeConteudo extrator = new ExtratorDeConteudoDoIMDB();
 
         // Buscar imagens da Nasa
-        //String url = "https://raw.githubusercontent.com/alura-cursos/imersao-java-2-api/main/NASA-APOD.json";
         //String url = "http://api.nasa.gov/planetary/apod?api_key=DEMO_KEY?start_date=2023-04-01&end_date=2023-04-03";
+        //String url = "https://raw.githubusercontent.com/alura-cursos/imersao-java-2-api/main/NASA-APOD.json";
+        //ExtratorDeConteudo extrator = new ExtratorDeConteudoDaNasa();
 
         // fazer uma conexão HTTP
         ClienteHttp http = new ClienteHttp();
         String json = http.buscaDados(url);
 
-        // extrair só os dados que interessam (titulo, poster, classificação)
-        //ExtratorDeConteudoDaNasa extrator = new ExtratorDeConteudoDaNasa();
-        ExtratorDeConteudoDoIMDB extrator = new ExtratorDeConteudoDoIMDB();
+        // exibir e manipular os dados
         List<Conteudo> conteudos = extrator.extraiConteudos(json);
 
         GeradoraDeFigurinhas geradoraDeFigurinhas = new GeradoraDeFigurinhas();
 
-        // exibir e manipular os dados
         for (int i = 0; i < 3; i++) {
             Conteudo conteudo = conteudos.get(i);
 
