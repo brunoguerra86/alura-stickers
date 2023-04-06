@@ -9,6 +9,7 @@ public class ExtratorDeConteudoDaNasa implements ExtratorDeConteudo {
         JsonParser parser = new JsonParser();
         List<Map<String, String>> listaDeAtributos = parser.parse(json);
 
+        // Stream() para transformar uma lista com varios atributos numa lista com apenas os atributos que interessam
         return listaDeAtributos.stream()
                 .map(atributos -> new Conteudo(atributos.get("title"), atributos.get("url")))
                 .toList();
