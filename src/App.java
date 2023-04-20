@@ -6,7 +6,7 @@ public class App {
     public static void main(String[] args) throws Exception {
         String imdbKey = System.getenv("IMDB_API_KEY");
 
-        API api = API.NASA;
+        API api = API.LINGUAGENS;
         String url = api.getUrl();
         ExtratorDeConteudo extrator = api.getExtrator();
 
